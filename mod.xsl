@@ -5,11 +5,11 @@
         <div class="J_OXMod oxmod-anchor" ox-mod="anchor">
             
         	<xsl:choose>
-        		<xsl:when test="env/domain = 'online'">
-        			<a name="{$name}"></a>
+        		<xsl:when test="env/domain = 'build' or env/domain = 'local'">
+                    <a name="{$name}">#<xsl:value-of select="$name"/></a>
         		</xsl:when>
         		<xsl:otherwise>
-        			<a name="{$name}">#<xsl:value-of select="$name"/></a>
+        			<a name="{$name}"></a>
         		</xsl:otherwise>
         	</xsl:choose>
             
